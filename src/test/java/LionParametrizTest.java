@@ -37,18 +37,13 @@ public class LionParametrizTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"Мужчина", true},
         };
     }
 
     @Test
     public void doesHaveManeParametrizedTest() throws Exception {
-        try {
-            Lion lion = new Lion(sex, feline);
-            assertEquals(expected, lion.doesHaveMane());
-        } catch (Exception exceptionTest) {
-            String expected = "java.lang.Exception: Используйте допустимые значения пола животного - самей или самка";
-            assertEquals(expected, exceptionTest.toString());
-        }
+        Lion lion = new Lion(sex, feline);
+        assertEquals(expected, lion.doesHaveMane());
     }
+
 }

@@ -38,4 +38,10 @@ public class LionTest {
         Mockito.when(feline.getFood("Хищник")).thenReturn(meat);
         assertEquals(meat, lion.getFood());
     }
+
+    @Test(expected = Exception.class)
+    public void doesHaveManeExceptionTestMin() throws Exception {
+        Lion lion = new Lion("МужчинаЛев", feline);
+        lion.doesHaveMane();
+    }
 }
